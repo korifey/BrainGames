@@ -1,0 +1,31 @@
+﻿<Window x:Class="BrainRing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Width="320" Height="200" WindowStyle="None" ResizeMode="NoResize"  
+    WindowStartupLocation="CenterScreen" WindowState="Maximized" KeyUp="OnKeyUp" DataContext="{Binding RelativeSource={RelativeSource Self}}">
+  
+  
+    <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="1*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="0" />
+    </Grid.RowDefinitions>
+    <Border Grid.Row="0" Grid.Column="0" Background="DarkRed" BorderThickness="0 0 2 0" Margin="0">
+      <Viewbox >
+        <TextBlock VerticalAlignment="Top" Text="{Binding LeftPoints}" Foreground="White" Margin="0, -2.3, 0, -2.5" FontFamily="Arial"/>
+      </Viewbox>
+    </Border>
+    <Border Grid.Row="0" Grid.Column="1" Background="Green" BorderThickness="2 0 0 0">
+      <Viewbox>
+        <TextBlock VerticalAlignment="Top" Text="{Binding RightPoints}" Foreground="White" Margin="0, -2.3, 0, -2.5" FontFamily="Arial"/>
+      </Viewbox>
+    </Border>
+    <Border Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" BorderBrush="White" Background="White" HorizontalAlignment="Center" Margin="0 -100 0 0" MaxWidth="120">
+      <TextBlock VerticalAlignment="Center" Text="{Binding Time}" FontSize="100" Foreground="Black" FontFamily="Arial"/>
+    </Border>
+  </Grid>
+</Window>
